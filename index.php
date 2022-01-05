@@ -190,7 +190,7 @@
     </div>
 
     <!-- LOGIN MODAL -->
-    <div class='modal content' id='login-modal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+    <div class='modal fade' id='login-modal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
         <div class='modal-dialog modal-dialog-centered'>
 
             <div class='modal-content'>
@@ -415,7 +415,7 @@
                                             MULAI KONSULTASI
                                         </a>
                                         <p style="margin: 10px;"><small class="text-muted">atau</small></p>
-                                        <a class="btn-fitur-daftar-biro" href="https://api.whatsapp.com/send?phone=6282128863838&text=Saya%20tertarik%20mendaftarkan%20biro%20saya%20di%20Zyon.">
+                                        <a class="btn-fitur-daftar-biro" data-bs-toggle="modal" data-bs-target="#daftar-biro">
                                             DAFTAR MENJADI BIRO KONSULTAN
                                         </a>
                                     </div>
@@ -451,10 +451,62 @@
 
             </div>
         </div>
+              
+        <!-- MODAL DAFTAR BIRO  --> 
+        <div class='modal fade' id='daftar-biro' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+            <div class='modal-dialog modal-dialog-centered'>
 
+                <div class='modal-content'>
+                    <div class='modal-header p-5 pb-4 border-bottom-0'>
+                        <h2 class='fw-bold mb-0'>Daftar Biro</h2>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                    </div>
+                    <div class='modal-body px-5 pb-5'>
+                        <form action="<?php echo $_SERVER['PHP_SELF']?>" method='post'>
 
+                            <div class='form-floating mb-3'>
+                                <input type="text" class="form-control rounded-4" id="NameBiro" name="biro" placeholder="Nama Biro" required>
+                                <label for="#NameBiro">Nama Biro</label>
+
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+
+                            <div class='form-floating mb-3'>
+                                <input type="text" class="form-control rounded-4" id="NamePIC" name="name-pic" placeholder="Nama PIC" required>
+                                <label for="#NamePIC">Nama PIC</label>
+
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+
+                            <div class='form-floating mb-3'>
+                                <input type="email" name="email-biro" class="form-control rounded-4" id="EmailBiro" name="email-biro" placeholder="name@example.com" required>
+                                <label for="#EmailBiro">Email address</label>
+
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            
+                            <div class="form-floating col-md-12">
+                            <!-- NOMOR TELPON -->
+                                <input type="text" name="no-biro" class="form-control rounded-4" id="PhoneBiro" placeholder="(081x) xxxx-xxxx" required>
+                                <label class="px-3" for="#PhoneBiro">Nomor Handphone (Whatsapp)</label>
+
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <br>
+                            <button name='daftar-biro' type='submit' class='w-100 mb-2 btn btn-lg rounded-4 btn-primary'>
+                                Daftar
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- PILIH BIRO MODAL -->
-        <div class="modal content" id="pilih-biro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="pilih-biro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
 
                 <div class="modal-content">
