@@ -220,12 +220,7 @@
                         <a class='btn' data-bs-toggle='modal' data-bs-target='#resetpass-modal' data-dismiss='modal' aria-label='Close'><small class='text-muted'>Lupa Password?</small></a>
 
                         <hr class='my-4'>
-
-                        <h2 class='fs-5 fw-bold mb-3'>Belum memiliki akun?</h2>
-                        <button class='w-100 mb-2 btn btn-lg rounded-4 btn-secondary' type='button' data-bs-toggle='modal' data-bs-target='#regis-modal' data-dismiss='modal' aria-label='Close'>
-                            Registrasi
-                        </button>
-
+                        <p class="mt-3 text-center">Anda belum punya akun? <a type='button' data-bs-toggle='modal' href='#regis-modal' data-dismiss='modal' aria-label='Close' >Register</a></p>
                     </form>
                 </div>
             </div>
