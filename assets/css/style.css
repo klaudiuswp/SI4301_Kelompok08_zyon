@@ -212,7 +212,7 @@
     height: 80%;
 }
 
-.btn-fitur-konsultasi {
+.button-konsultasi {
     display: inline-block;
     font-weight: 400;
     font-size: 20px;
@@ -227,10 +227,9 @@
     border-style: none;
     padding: 0.375rem 3rem;
     text-decoration: none;
-    cursor: pointer;
 }
 
-.btn-fitur-konsultasi:hover {
+.button-konsultasi:hover {
     background-color: #2545b0;
     color: white;
 }

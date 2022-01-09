@@ -149,7 +149,7 @@
                                 <a class="nav-link text-light" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#fitur">Fitur</a>
+                                <a class="nav-link text-light" href="#fitur">Konsultasi</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="#about">Tentang</a>
@@ -356,220 +356,45 @@
     </div>
 
     <!-- FITUR -->
-    <div class="container-fluid" id="fitur" style="height: 110vh;">
+    <div class="container-fluid" id="fitur" style="height: 100vh;">
 
         <!-- HEADER FITUR -->
         <div class="fitur-head">
             <h1 class="head-text">
-                FITUR ZYON
+                KONSULTASI
             </h1>
         </div>
 
-        <!-- ISI FITUR -->
-        <ul class="nav nav-pills nav-justified fitur-navigator" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active link-light border-rad" id="pills-konsultasi-tab" data-bs-toggle="pill" href="#pills-konsultasi" role="tab" aria-controls="pills-konsultasi" aria-selected="true">Konsultasi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link link-light border-rad" id="pills-self-care-tab" data-bs-toggle="pill" href="#pills-self-care" role="tab" aria-controls="pills-self-care" aria-selected="false">Self
-                    Care</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link link-light border-rad" id="pills-forum-podcast-tab" data-bs-toggle="pill" href="#pills-forum-podcast" role="tab" aria-controls="pills-forum" aria-selected="false">Forum Podcast</a>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link link-light border-rad" id="pills-podcast-tab" data-bs-toggle="pill" href="#pills-podcast" role="tab" aria-controls="pills-podcast" aria-selected="false">Podcast</a>
-            </li> -->
-        </ul>
 
-        <div class="container mt-5">
 
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-konsultasi" role="tabpanel">
+        <div class="container mt-5" >
 
-                    <!-- ISI KONSULTASI -->
+            <div class="card mb-3 fitur-card">
+                <div class="row" style="max-height: 4000px; padding-left:160px;">
 
-                    <div class="card mb-3 fitur-card">
-                        <div class="row g-0" style="max-height: 4000px;">
-                            <div class="col-md-4">
-                                <div class="card-img-top img-konsultasi" style="background-image: url('assets/img/konsultasi.jpg');">
-                                </div>
+                    <div class="col-md-10 px-2">
+                        <div class="card-body">
+                            <!-- <h2 class="konsultasi-head">KONSULTASI DENGAN EKSPERT</h2> -->
+
+                            <div class="card-text box-deskripsi-konsultasi">
+                                <p class="card-text text-center">
+                                    Zyon bekerja sama dengan biro-biro psikologi di Indonesia untuk mempermudah user menemukan dan melakukan Konsultasi.
+                                   
+                                </p>
                             </div>
-                            <div class="col-md-8 px-2">
-                                <div class="card-body">
-                                    <h2 class="konsultasi-head">KONSULTASI DENGAN EKSPERT</h2>
 
-                                    <div class="card-text box-deskripsi-konsultasi">
-                                        <p class="card-text">
-                                            Zyon bekerja sama dengan biro-biro psikologi di Indonesia untuk mempermudah user menemukan dan melakukan Konsultasi
-                                        </p>
-                                    </div>
-
-                                    <div class="card-text box-btn-konsultasi">
-                                        <a class="btn-fitur-konsultasi" data-bs-toggle="modal" data-bs-target="#pilih-biro">
-                                            MULAI KONSULTASI
-                                        </a>
-                                        <p style="margin: 10px;"><small class="text-muted">atau</small></p>
-                                        <a class="btn-fitur-daftar-biro" data-bs-toggle="modal" data-bs-target="#daftar-biro">
-                                            DAFTAR MENJADI BIRO KONSULTAN
-                                        </a>
-                                    </div>
-
-                                </div>
+                            <div class="card-text box-btn-konsultasi text-center mt-4">
+                            <a class="button-utama" href="pilih.php">
+                                Mulai Konsultasi
+                            </a>
                             </div>
                         </div>
                     </div>
-
-                </div>
-
-                <div class="tab-pane fade" id="pills-self-care" role="tabpanel">
-
-                    <!-- ISI SELF CARE -->
-
-                    <h2 class="konsultasi-head pos-middle">COMING SOON</h2>
-
-                </div>
-                <div class="tab-pane fade" id="pills-forum-podcast" role="tabpanel">
-
-                    <!-- ISI FORUM PODCAST -->
-
-                    <h2 class="konsultasi-head pos-middle">COMING SOON</h2>
-
-                </div>
-                <!-- <div class="tab-pane fade" id="pills-podcast" role="tabpanel" aria-labelledby="pills-contact-tab"> -->
-
-                    <!-- ISI PODCAST -->
-
-                    <!-- <h2 class="konsultasi-head pos-middle">COMING SOON</h2> -->
-
-                <!-- </div>  -->
-
-            </div>
-        </div>
-              
-        <!-- MODAL DAFTAR BIRO  --> 
-        <div class='modal fade' id='daftar-biro' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
-            <div class='modal-dialog modal-dialog-centered'>
-
-                <div class='modal-content'>
-                    <div class='modal-header p-5 pb-4 border-bottom-0'>
-                        <h2 class='fw-bold mb-0'>Daftar Biro</h2>
-                        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-                    </div>
-                    <div class='modal-body px-5 pb-5'>
-                        <form action="<?php echo $_SERVER['PHP_SELF']?>" method='post'>
-
-                            <div class='form-floating mb-3'>
-                                <input type="text" class="form-control rounded-4" id="NameBiro" name="biro" placeholder="Nama Biro" required>
-                                <label for="#NameBiro">Nama Biro</label>
-
-                                <div class="valid-feedback">Valid.</div>
-                                <div class="invalid-feedback">Please fill out this field.</div>
-                            </div>
-
-                            <div class='form-floating mb-3'>
-                                <input type="text" class="form-control rounded-4" id="NamePIC" name="name-pic" placeholder="Nama PIC" required>
-                                <label for="#NamePIC">Nama PIC</label>
-
-                                <div class="valid-feedback">Valid.</div>
-                                <div class="invalid-feedback">Please fill out this field.</div>
-                            </div>
-
-                            <div class='form-floating mb-3'>
-                                <input type="email" name="email-biro" class="form-control rounded-4" id="EmailBiro" name="email-biro" placeholder="name@example.com" required>
-                                <label for="#EmailBiro">Email address</label>
-
-                                <div class="valid-feedback">Valid.</div>
-                                <div class="invalid-feedback">Please fill out this field.</div>
-                            </div>
-                            
-                            <div class="form-floating col-md-12">
-                            <!-- NOMOR TELPON -->
-                                <input type="text" name="no-biro" class="form-control rounded-4" id="PhoneBiro" placeholder="(081x) xxxx-xxxx" required>
-                                <label class="px-3" for="#PhoneBiro">Nomor Handphone (Whatsapp)</label>
-
-                                <div class="invalid-feedback">Please fill out this field.</div>
-                            </div>
-                            <br>
-                            <button name='daftar-biro' type='submit' class='w-100 mb-2 btn btn-lg rounded-4 btn-primary'>
-                                Daftar
-                            </button>
-
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- PILIH BIRO MODAL -->
-        <div class="modal fade" id="pilih-biro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-
-                <div class="modal-content">
-                    <div class="modal-header p-5 pb-4 border-bottom-0">
-                        <h2 class="fw-bold mb-0">Pilih Biro</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body mb-0">
-                        <!-- Isi Biro -->
-                        <div class="accordion isi-biro">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            ULP Fakultas Psikologi UIN SGD Bandung
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        ULP Fakultas Psikologi adalah biro psikologi yang berbasis di UIN SGD Bandung.
-                                        <a href="https://api.whatsapp.com/send?phone=6282128863838&text=Saya%20tertarik%20melakukan%20konsultasi%20dengan%20ULP%20Fakultas%20Psikologi.">Lanjutkan</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            ULP Fakultas Psikologi UIN SGD Bandung
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                        on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                        craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            ULP Fakultas Psikologi UIN SGD Bandung
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                        on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                        craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div> -->
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-
+    <hr>
     <!-- ABOUT US -->
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg pb-5">
