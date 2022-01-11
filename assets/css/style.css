@@ -1,3 +1,8 @@
+.vl {
+    border-left: 6px solid rgb(0, 0, 0);
+    height: 500px;
+}
+
 .bg-cover {
     background: url('../img/bg.jpg');
     background-size: cover;
