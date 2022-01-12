@@ -17,6 +17,7 @@
             <!-- ISI-UTAMA -->
             <div class="container-fluid konten-utama">
                 <h1 class="text-utama">
+                    {{-- {{ Auth::user()->name }} --}}
                     Ayo Mulai Peduli pada Kesehatan Mental !
                 </h1>
                 <a class="button-utama" href="#fitur">
@@ -140,7 +141,15 @@
         </div>
     </section>
 
-    <div id="preloader"></div>
+    <div id="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+          </div>
+    </div>
+    {{-- <div class="preloader">
+        
+      </div> --}}
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 

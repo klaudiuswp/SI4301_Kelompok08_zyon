@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,18 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->name('dashboard');
 
-Route::get('/dashboard', [dashboardController::class,'index'])->name('dashboard');
+// Route::get('/dashboard', [dashboardController::class,'index'])->name('dashboard');
 
+Route::group(['middleware' => ['auth']], function () {
 
+Route::group(['middleware' => ['role:admin']], function() {
+    Route::get('/admin-dashboard', [AdminController::class,'index'])->name('dashboard-admin');
+    Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
+});
+
+Route::group(['middleware' => ['role:user']], function() {
+    Route::get('/dashboard', [UserController::class,'index'])->name('dashboard-user');
+    // Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
+});
+
+});

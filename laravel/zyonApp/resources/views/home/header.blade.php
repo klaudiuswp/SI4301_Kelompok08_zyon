@@ -36,7 +36,13 @@
                             @if (Route::has('login'))
                             <div class="">
                                 @auth
-                                    <a href="{{ url('/dashboard') }}" class="nav-link text-light">Dashboard</a>
+                                    @role('user')
+                                        <a href="{{ url('/dashboard') }}" class="nav-link text-light">Dashboard</a>
+                                    @endrole
+
+                                    @role('admin')
+                                        <a href="{{ url('/admin-dashboard') }}" class="nav-link text-light">Dashboard</a>
+                                    @endrole
                                 @else
                                     <button class='btn btn-login' data-bs-toggle='modal' data-bs-target='#login-modal' id='login'>
                                         Login

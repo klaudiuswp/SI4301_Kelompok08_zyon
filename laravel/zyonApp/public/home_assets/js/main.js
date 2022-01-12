@@ -174,7 +174,7 @@
       preloader.remove();
     });
   }
-
+  
   /**
    * Initiate glightbox
    */

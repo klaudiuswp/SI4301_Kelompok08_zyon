@@ -102,6 +102,7 @@
                             <form method="POST" id="logout-form" action="{{ route('logout') }}">
                                 @csrf
                             </form>
+
                         </x-slot>
                     </x-jet-dropdown>
                 @endauth

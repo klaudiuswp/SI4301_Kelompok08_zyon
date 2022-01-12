@@ -22,6 +22,7 @@
     <link href="home_assets/img/favicon.png" rel="apple-touch-icon" />
 
     <!-- Vendor CSS Files -->
+    <script src="dashboard_assets/js/waves.js"></script>
     <link href="home_assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
     <link href="home_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="home_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
@@ -43,6 +44,10 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+<!--Custom JavaScript -->
+<script src="dashboard_assets/js/custom.js"></script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <script src="home_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
