@@ -3,7 +3,6 @@
 @section('container')
 
 <div class="container-fluid">
-  
   <form class="d-flex">
     <input class="form-control me-2" type="text" placeholder="Search" />
     <button class="btn btn-primary" type="button">Search</button>
@@ -61,6 +60,7 @@
       </div>
     </div>
   </div>
+  
 
   
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
