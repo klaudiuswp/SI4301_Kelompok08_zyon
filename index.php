@@ -402,8 +402,8 @@
             <div class="head">
                 <h3 class="text-center">Tentang Kami</h3>
                 <p class="mx-3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque ligula dictum magna elementum, sit amet pretium mauris fermentum. Nam fringilla sem nibh, non rhoncus odio iaculis et. Donec hendrerit tempor quam eu venenatis. Aliquam ac bibendum
-                    purus. Nullam id elementum elit. Aenean vel aliquet tortor, ultricies cursus ante.
+                    Web Zyon Mental Health merupakan web yang bertujuan untuk membantu kamu dalam menemukan solusi masalah mental health. Kamu akan berkonsultasi dengan
+                    psikolog yang berkompeten dan profesional sehingga solusi kamu akan teratasi.
                 </p>
             </div>
             <div class="row">
@@ -417,20 +417,20 @@
                     <div class="icon-box">
                         <div class="icon"><i class="fas fa-hands-helping"></i></div>
                         <h4 class="title">KONSULTASI</h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <p class="description">Temukan solusi permasalahan kamu dengan psikolog yang ramah dan profesional</p>
                     </div>
 
                     <div class="icon-box">
                         <div class="icon"><i class="far fa-comments"></i></i>
                         </div>
                         <h4 class="title">KOMUNIKASI</h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        <p class="description">Privasi dan kerahasian kamu akan terjaga dalam lindungan Kode Etik Psikologi</p>
                     </div>
 
                     <div class="icon-box">
                         <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
                         <h4 class="title">HASIL</h4>
-                        <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+                        <p class="description">Hasil Konsultasi kamu dapat dilihat dengan mudah pada web ini</p>
                     </div>
                 </div>
             </div>
