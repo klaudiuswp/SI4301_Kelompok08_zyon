@@ -9,8 +9,10 @@ class Psikolog extends Model
 {
     use HasFactory;
 
+    protected $table = 'psikolog';
+
     protected $fillable = [
-        'nama','fee','deskripsi'
+        'nama','foto_psikolog','fee','deskripsi'
     ];
 
 }

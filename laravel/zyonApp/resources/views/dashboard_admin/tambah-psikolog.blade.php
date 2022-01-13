@@ -7,24 +7,25 @@
     <div class="col-md-12">
       <div class="white-box"> 
         <div class="container">
-          <h3 class="box-title">Input Psikolog</h3>
+          <h3 class="box-title">Tambah Psikolog</h3>
           <br />
         </div>
         <div class="container">
-          <form action="" method="POST">
+          <form action="{{ route('tambah-psikolog') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Nama Psikolog</label>
-              <input name="" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama Psikolog" />
+              <label class="form-label">Nama Psikolog</label>
+              <input name="nama" type="type" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama Psikolog" />
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Fee</label>
-              <input name="" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Fee Psikolog" />
+              <label class="form-label">Fee</label>
+              <input name="fee" type="number" class="form-control @error('fee') is-invalid @enderror" placeholder="Masukkan Fee Psikolog" />
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Psikolog</label>
-              <textarea name="" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Deskripsi Psikolog"></textarea>
+              <textarea name="deskripsi" class="form-control" rows="3" placeholder="Masukkan Deskripsi Psikolog"></textarea>
             </div>
+            <input class=" @error('foto_psikolog') is-invalid @enderror" type="file" name="foto_psikolog">
             <div class="text-center">
               <br />
               <br />

@@ -20,11 +20,11 @@ class CreateTransaksisTable extends Migration
             $table->foreignId('konsultasi_id');
             $table->foreignId('customer_id');
             $table->string('status');
-            $table->string('nominal');
+            $table->integer('nominal');
             $table->string('nama_rekening_asal');
             $table->integer('no_rekening_asal');
             $table->foreignId('no_rekening_tujuan');
-            $table->string('bukti_transaksi');
+            $table->string('bukti_transaksi')->nullable();
             $table->timestamps();
         });
     }

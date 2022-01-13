@@ -15,8 +15,9 @@ class CreatePsikologsTable extends Migration
     {
         Schema::create('psikolog', function (Blueprint $table) {
             $table->id();
+            $table->string('foto_psikolog')->nullable();
             $table->string('nama');
-            $table->string('fee');
+            $table->integer('fee');
             $table->string('deskripsi');
             $table->timestamps();
         });

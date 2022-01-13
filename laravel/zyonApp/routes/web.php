@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\PsikologController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,15 +32,15 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::group(['middleware' => ['role:admin']], function() {
         Route::get('/admin-dashboard', [AdminController::class,'index'])->name('dashboard-admin');
+        Route::get('/tambah-psikolog', [PsikologController::class,'create']);
+        Route::post('/tambah-psikolog-tambah', [PsikologController::class,'store'])->name('tambah-psikolog');
+        Route::get('/psikolog-list', [PsikologController::class,'index']);
+
         Route::get('/konsultasi', function () {
             return view('dashboard_admin.konsultasi');
         });
-        Route::get('/psikolog', function () {
-            return view('dashboard_admin.psikolog');
-        });
-        Route::get('/psikolog-tambah', function () {
-            return view('dashboard_admin.tambah-psikolog');
-        });    
+        
+        
         Route::get('/transaksi', function () {
             return view('dashboard_admin.transaksi');
         });
@@ -54,9 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/event', function () {
             return view('dashboard_user.event');
         });
-        Route::get('/bayar', function () {
-            return view('dashboard_user.bayar');
-        });
+        Route::post('/psikolog/{date}/bayar', [TransaksiController::class,'create'])->name('bayar');
         Route::get('/psikolog', function () {
             return view('dashboard_user.psikolog');
         });

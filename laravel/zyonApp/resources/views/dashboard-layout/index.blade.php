@@ -46,7 +46,7 @@
               
             </a>
       
-            <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none" href="javascript:void(0)"><i class="fa fa-tasks text-white" aria-hidden="true"></i></a>
+            <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none" href="javascript:void(0)"><i class="ti-close ti-menu text-white" aria-hidden="true"></i></a>
           </div>
     
           <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5" style="padding-right: 2%">
@@ -144,8 +144,8 @@
                   <span class="hide-menu text-white">Konsultasi</span>
                 </a>
                 <ul class="dropdown-menu mx-5" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item-text text-white" href="/event" style="padding-left: 30px">Daftar Psikolog</a></li>
-                  <li><a class="dropdown-item-text text-white" href="/psikolog" style="padding-left: 30px">Tambah Psikolog</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/event" style="padding-left: 30px">Daftar Konsultasi</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/psikolog" style="padding-left: 30px">Tambah Konsultasi</a></li>
                 </ul>
                 @endrole
 
@@ -155,8 +155,8 @@
                   Psikolog Zyon
                 </a>
                 <ul class="dropdown-menu mx-5" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item-text text-white" href="/psikolog" style="padding-left: 30px">Daftar Psikolog</a></li>
-                  <li><a class="dropdown-item-text text-white" href="/psikolog-tambah" style="padding-left: 30px">Tambah Psikolog</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/psikolog-list" style="padding-left: 30px">Psikolog</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/tambah-psikolog" style="padding-left: 30px">Tambah Psikolog</a></li>
                 </ul>
                 @endrole
               </li>

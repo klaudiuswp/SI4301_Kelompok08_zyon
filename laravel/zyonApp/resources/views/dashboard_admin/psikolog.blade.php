@@ -11,7 +11,16 @@
   <div class="row">
     <div class="col-md-12">
       <div class="white-box">
-        <h3 class="box-title">All Psikolog</h3>
+        <div class="box-title">
+
+        <div class="d-flex justify-content-start">
+          <h3>All Psikolog</h3>
+        </div>
+        <div class="d-flex justify-content-end">
+          <a class="btn btn-primary" href="/tambah-psikolog">Tambah</a>
+        </div>
+        
+        </div>
         
         <table class="table">
           <thead>
@@ -24,36 +33,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Jacob</td>
-              <td>Rp. 10000000</td>
-              <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-              <td>
-                <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</div>
-                <div class="btn btn-danger">Delete</div>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Rp. 10000000</td>
-              <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-              <td>
-                <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</div>
-                <div class="btn btn-danger">Delete</div>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Jacob</td>
-              <td>Rp. 10000000</td>
-              <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-              <td>
-                <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</div>
-                <div class="btn btn-danger">Delete</div>
-              </td>
-            </tr>
+
+            @foreach ($psikologs as $psikolog)
+              <tr>
+                <td>{{ $psikolog->id }}</td>
+                <td>{{ $psikolog->nama }}</td>
+                <td>{{ $psikolog->fee }}</td>
+                <td>{{ $psikolog->deskripsi }}</td>
+                <td>
+                  <form action="">
+                    @csrf
+                  <button type="button" class="btn btn-primary d-inline" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button>
+                  
+                  <button type="submit" class="btn btn-danger d-inline" onclick="return confirm('Yakin hapus psikolog')">Delete</button>
+                  </form>
+                </td>
+              </tr>
+            @endforeach
+            
           </tbody>
         </table>
         
@@ -70,22 +67,22 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="">
+          <form action="" method="POST" enctype="multipart/form-data">
             
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Nama Psikolog</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama psikolog" />
+              <label class="form-label">Nama Psikolog</label>
+              <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="nama psikolog" />
             </div>
             
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Fee</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Fee" />
+              <label class="form-label">Fee</label>
+              <input type="text" name="fee" class="form-control" placeholder="Fee" />
             </div>
             
             <div class="mb-3">
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Deskprisi</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Deskripsi"></textarea>
+                <label class="form-label">Deskprisi</label>
+                <textarea name="deskripsi" class="form-control" rows="2" placeholder="Deskripsi"></textarea>
               </div>
             </div>
           </form>
