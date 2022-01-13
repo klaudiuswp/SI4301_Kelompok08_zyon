@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/tambah-psikolog', [PsikologController::class,'create']);
         Route::post('/tambah-psikolog-tambah', [PsikologController::class,'store'])->name('tambah-psikolog');
         Route::get('/psikolog-list', [PsikologController::class,'index']);
+        Route::post('/psikolog-edit', [PsikologController::class,'edit']);
+        Route::post('/psikolog-delete', [PsikologController::class,'delete']);
 
         Route::get('/konsultasi', function () {
             return view('dashboard_admin.konsultasi');
@@ -53,13 +55,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::group(['middleware' => ['role:user']], function() {
         Route::get('/dashboard', [UserController::class,'index'])->name('dashboard-user');
+        Route::get('/psikolog', [PsikologController::class,'index']);
         Route::get('/event', function () {
             return view('dashboard_user.event');
         });
         Route::post('/psikolog/{date}/bayar', [TransaksiController::class,'create'])->name('bayar');
-        Route::get('/psikolog', function () {
-            return view('dashboard_user.psikolog');
-        });
+        
         // Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
     });
 

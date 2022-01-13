@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Psikolog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PsikologController extends Controller
 {
@@ -19,7 +20,7 @@ class PsikologController extends Controller
         if (Auth::user()->hasRole('admin')){
             return view('dashboard_admin.psikolog',['psikologs' => $psikologs]);
         }if(Auth::user()->hasRole('user')){
-            return view('dashboard_user.psikolog');
+            return view('dashboard_user.psikolog',['psikologs' => $psikologs]);
         }
     }
 
@@ -51,9 +52,10 @@ class PsikologController extends Controller
             'foto_psikolog' => ['required', 'image','file'],
         ]);
 
-        // $foto = time().'_'.$request->nama.'.'.$request->foto_psikolog->extension();
+        $foto = time().'_'.$request->nama.'.'.$request->foto_psikolog->extension();
 
-        $validated['foto_psikolog'] = $request->file('foto_psikolog')->store('foto-psikolog');
+        $validated['foto_psikolog'] = $request->file('foto_psikolog')->storeAs('foto-psikolog',$foto);
+        // Storage::disk('local')->put('example.txt', 'Contents');
 
         // $request->foto_psikolog->move(public_path('foto_psikolog'), $foto);
 
@@ -87,9 +89,25 @@ class PsikologController extends Controller
      * @param  \App\Models\Psikolog  $psikolog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Psikolog $psikolog)
+    public function edit(Request $request)
     {
-        //
+        $psikolog = Psikolog::findorFail($request->id);
+        $validated = $request->validate([
+            'nama' => ['string', 'max:255'],
+            'fee' => [],
+            'deskripsi' => ['string'],
+            'foto_psikolog' => ['image','file'],
+        ]);
+
+        if($request->foto_psikolog){
+            $foto = time().'_'.$request->nama.'.'.$request->foto_psikolog->extension();
+            $validated['foto_psikolog'] = $request->file('foto_psikolog')->storeAs('foto-psikolog',$foto);
+        }
+
+        // Storage::delete('storage/'.$request->foto_psikolog);
+        $psikolog->update($validated);
+
+        return redirect()->back()->with('success', 'User berhasil diubah.');
     }
 
     /**
@@ -110,8 +128,11 @@ class PsikologController extends Controller
      * @param  \App\Models\Psikolog  $psikolog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Psikolog $psikolog)
+    public function delete(Request $request)
     {
-        //
+        $psikolog = Psikolog::findorFail($request->id);
+        $psikolog->delete();
+
+        return redirect()->back()->with('success', 'User berhasil diubah.');
     }
 }
