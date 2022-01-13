@@ -37,17 +37,6 @@
 
 <body id="page-top">
 
-<?php
-include 'config.php';
-$id = $_GET['ID'];
-
-$data = "SELECT * FROM Users WHERE ID = '".$id."'";
-$update = mysqli_query($conn,$data);
-
-while($d = mysqli_fetch_assoc($update)){
-    $nama_depan = $d['NamaDepan'];
-}
-?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">        
@@ -75,9 +64,6 @@ while($d = mysqli_fetch_assoc($update)){
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <?php 
-                                    echo $nama_depan;
-                                    ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
                                     src="assets/img/undraw_profile.svg">
