@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Psikolog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PsikologController extends Controller
 {
@@ -14,7 +15,11 @@ class PsikologController extends Controller
      */
     public function index()
     {
-        return view('dashboard_admin.dashboard');
+        if (Auth::user()->hasRole('admin')){
+            return view('dashboard_admin.psikolog');
+        }if(Auth::user()->hasRole('user')){
+            return view('dashboard_user.psikolog');
+        }
     }
 
     /**
@@ -24,7 +29,7 @@ class PsikologController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard_admin.tambah-psikolog');
     }
 
     /**
@@ -35,7 +40,15 @@ class PsikologController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $vaccine = Vaccines::find($id);
+        // $patient = new Patients();
+        // $patient->vaccine_id = $vaccine->id;
+        // $patient->name = $request->name;
+        // $patient->nik = $request->nik;
+        // $patient->alamat = $request->alamat;
+        // $patient->no_hp = $request->no_hp;
+        // $patient->save();
+        // return redirect(route('patient.index'));
     }
 
     /**

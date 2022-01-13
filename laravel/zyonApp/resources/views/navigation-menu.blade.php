@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand me-4" href="/">
-            <x-jet-application-mark width="36" />
+            <img src="{{ url('dashboard_assets/img/logo-blue.png') }}" alt="homepage" style="width: 30px" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -11,9 +11,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                @role('admin')
+                <x-jet-nav-link href="{{ route('dashboard-admin') }}" :active="request()->routeIs('dashboard-admin')">
                     {{ __('Dashboard') }}
                 </x-jet-nav-link>
+                @endrole
+
+                @role('user')
+                <x-jet-nav-link href="{{ route('dashboard-user') }}" :active="request()->routeIs('dashboard-user')">
+                    {{ __('Dashboard') }}
+                </x-jet-nav-link>
+                @endrole
+                
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -65,7 +74,8 @@
                     <x-jet-dropdown id="settingsDropdown">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <img class="rounded-circle" width="32" height="32" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                <div class="d-inline p-2 text-muted">{{ Auth::user()->name }}</div>
+                                <div class="d-inline p-2 "><img class="rounded-circle" width="32" height="32" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /></div>
                             @else
                                 {{ Auth::user()->name }}
 
@@ -90,6 +100,12 @@
                                     {{ __('API Tokens') }}
                                 </x-jet-dropdown-link>
                             @endif
+
+                            @role('user')
+                            <x-jet-dropdown-link href="/event">
+                                {{ __('Event') }}
+                            </x-jet-dropdown-link>
+                            @endrole
 
                             <hr class="dropdown-divider">
 

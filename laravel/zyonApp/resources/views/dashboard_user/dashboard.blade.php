@@ -1,28 +1,15 @@
 @extends('dashboard-layout.index')
 
 @section('container')
-<!-- ============================================================== -->
-<!-- Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
 
-<!-- ============================================================== -->
-<!-- End Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Container fluid  -->
-<!-- ============================================================== -->
 <div class="container-fluid">
-  <!-- ============================================================== -->
-  <!-- Three charts -->
-  <!-- ============================================================== -->
+  
   <form class="d-flex">
     <input class="form-control me-2" type="text" placeholder="Search" />
     <button class="btn btn-primary" type="button">Search</button>
   </form>
   <br />
-  <!-- ============================================================== -->
-  <!-- PRODUCTS YEARLY SALES -->
-  <!-- ============================================================== -->
+  
   <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
       <div class="white-box">
@@ -42,9 +29,7 @@
       </div>
     </div>
   </div>
-  <!-- ============================================================== -->
-  <!-- RECENT SALES -->
-  <!-- ============================================================== -->
+  
   <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12">
       <div class="white-box">
@@ -127,18 +112,18 @@
       </div>
     </div>
   </div>
-  <!-- ============================================================== -->
-  <!-- Recent Comments -->
-  <!-- ============================================================== -->
+  
+  
+  
   <div class="row">
-    <!-- .col -->
+    
     <div class="col-md-12 col-lg-8 col-sm-12">
       <div class="card white-box p-0">
         <div class="card-body">
           <h3 class="box-title mb-0">Recent Comments</h3>
         </div>
         <div class="comment-widgets">
-          <!-- Comment Row -->
+          
           <div class="d-flex flex-row comment-row p-3 mt-0">
             <div class="p-2"><img src="plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle" /></div>
             <div class="comment-text ps-2 ps-md-3 w-100">
@@ -151,7 +136,7 @@
               </div>
             </div>
           </div>
-          <!-- Comment Row -->
+          
           <div class="d-flex flex-row comment-row p-3">
             <div class="p-2"><img src="plugins/images/users/genu.jpg" alt="user" width="50" class="rounded-circle" /></div>
             <div class="comment-text ps-2 ps-md-3 active w-100">
@@ -164,7 +149,7 @@
               </div>
             </div>
           </div>
-          <!-- Comment Row -->
+          
           <div class="d-flex flex-row comment-row p-3">
             <div class="p-2"><img src="plugins/images/users/ritesh.jpg" alt="user" width="50" class="rounded-circle" /></div>
             <div class="comment-text ps-2 ps-md-3 w-100">
@@ -287,7 +272,7 @@
         </div>
       </div>
     </div>
-    <!-- /.col -->
+    
   </div>
 </div>
 @endsection

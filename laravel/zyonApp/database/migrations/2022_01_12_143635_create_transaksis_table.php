@@ -21,6 +21,9 @@ class CreateTransaksisTable extends Migration
             $table->foreignId('customer_id');
             $table->string('status');
             $table->string('nominal');
+            $table->string('nama_rekening_asal');
+            $table->integer('no_rekening_asal');
+            $table->foreignId('no_rekening_tujuan');
             $table->string('bukti_transaksi');
             $table->timestamps();
         });

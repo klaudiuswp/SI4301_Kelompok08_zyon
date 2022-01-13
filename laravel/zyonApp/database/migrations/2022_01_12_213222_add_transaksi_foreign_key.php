@@ -17,6 +17,7 @@ class AddTransaksiForeignKey extends Migration
         {
             $table->foreign('konsultasi_id')->references('id')->on('konsultasi')->onDelete('cascade');
             $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('no_rekening_tujuan')->references('no_rek')->on('rekenings')->onDelete('cascade');
         });
     }
 
@@ -31,6 +32,7 @@ class AddTransaksiForeignKey extends Migration
         {
         $table->dropForeign('konsultasi_id');
         $table->dropForeign('customer_id');
+        $table->dropForeign('no_rekening_tujuan');
         });
     }  
 }

@@ -11,6 +11,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dashboard</title>
 
+    <!-- Favicons -->
+    <link href="home_assets/img/favicon.png" rel="icon" />
+    <link href="home_assets/img/favicon.png" rel="apple-touch-icon" />
+
     <!-- Custom CSS -->
     <link href="dashboard_assets/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="dashboard_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" />
@@ -48,22 +52,29 @@
           <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5" style="padding-right: 2%">
       
             <div class="navbar-nav ms-auto d-flex align-items-center">
-        
+              @role('admin')
+                <h4 class="dropdown-header small text-muted">
+                  Admin
+                </h4>
+              @endrole
                 @auth
                     <x-jet-dropdown id="settingsDropdown">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <img class="rounded-circle" width="32" height="32" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            <div class="d-inline p-2 text-muted">{{ Auth::user()->name }}</div>
+                            <div class="d-inline p-2 "><img class="rounded-circle" width="32" height="32" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /></div>
                             @else
-                                {{ Auth::user()->name }}
+                              
+                              {{ Auth::user()->name }}
 
-                                <svg class="ms-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
+                              <svg class="ms-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                              </svg>
                             @endif
                         </x-slot>
 
                         <x-slot name="content">
+
                             <h6 class="dropdown-header small text-muted">
                                 {{ __('Manage Account') }}
                             </h6>
@@ -77,6 +88,12 @@
                                     {{ __('API Tokens') }}
                                 </x-jet-dropdown-link>
                             @endif
+
+                            @role('user')
+                            <x-jet-dropdown-link href="/event">
+                                {{ __('Event') }}
+                            </x-jet-dropdown-link>
+                            @endrole
 
                             <hr class="dropdown-divider">
 
@@ -122,10 +139,14 @@
 
               <li class="sidebar-item">
                 @role('user')
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" href="/dashboard">
-                  <i class="fa fa-columns text-white" aria-hidden="true"></i>
-                  <span class="hide-menu text-white">Post</span>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link dropdown-toggle text-white" aria-expanded="false" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black">
+                  <i class="fa fa-user-md text-white" aria-hidden="true"></i>
+                  <span class="hide-menu text-white">Konsultasi</span>
                 </a>
+                <ul class="dropdown-menu mx-5" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item-text text-white" href="/event" style="padding-left: 30px">Daftar Psikolog</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/psikolog" style="padding-left: 30px">Tambah Psikolog</a></li>
+                </ul>
                 @endrole
 
                 @role('admin')
@@ -135,16 +156,16 @@
                 </a>
                 <ul class="dropdown-menu mx-5" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item-text text-white" href="/psikolog" style="padding-left: 30px">Daftar Psikolog</a></li>
-                  <li><a class="dropdown-item-text text-white" href="/tambah-psikolog" style="padding-left: 30px">Tambah Psikolog</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/psikolog-tambah" style="padding-left: 30px">Tambah Psikolog</a></li>
                 </ul>
                 @endrole
               </li>
 
               <li class="sidebar-item">
                 @role('user')
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" href="#">
-                  <i class="fa fa-columns text-white" aria-hidden="true"></i>
-                  <span class="hide-menu text-white">Riwayat Konsultasi</span>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" href="psikolog">
+                  <i class="fa fa-credit-card text-white" aria-hidden="true"></i>
+                  <span class="hide-menu text-white">Transaksi</span>
                 </a>
                 @endrole
 

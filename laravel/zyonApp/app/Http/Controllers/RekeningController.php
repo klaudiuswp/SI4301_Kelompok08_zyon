@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaksi;
+use App\Models\Rekening;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class TransaksiController extends Controller
+class RekeningController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->hasRole('admin')){
-            return view('dashboard_admin.transaksi');
-        }if(Auth::user()->hasRole('user')){
-            return view('dashboard_user.event');
-        }
+        //
     }
 
     /**
@@ -46,10 +41,10 @@ class TransaksiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  \App\Models\Rekening  $rekening
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaksi $transaksi)
+    public function show(Rekening $rekening)
     {
         //
     }
@@ -57,10 +52,10 @@ class TransaksiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  \App\Models\Rekening  $rekening
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaksi $transaksi)
+    public function edit(Rekening $rekening)
     {
         //
     }
@@ -69,10 +64,10 @@ class TransaksiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  \App\Models\Rekening  $rekening
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaksi $transaksi)
+    public function update(Request $request, Rekening $rekening)
     {
         //
     }
@@ -80,10 +75,10 @@ class TransaksiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  \App\Models\Rekening  $rekening
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy(Rekening $rekening)
     {
         //
     }
