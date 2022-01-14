@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Konsultasi;
 use App\Models\Psikolog;
+use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -16,11 +19,11 @@ class PsikologController extends Controller
      */
     public function index()
     {
-        $psikologs = Psikolog::all();
+        // $psikologs = Psikolog::all();
         if (Auth::user()->hasRole('admin')){
-            return view('dashboard_admin.psikolog',['psikologs' => $psikologs]);
+            return view('dashboard_admin.psikolog');
         }if(Auth::user()->hasRole('user')){
-            return view('dashboard_user.psikolog',['psikologs' => $psikologs]);
+            return view('dashboard_user.psikolog');
         }
     }
 

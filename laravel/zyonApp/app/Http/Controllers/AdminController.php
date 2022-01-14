@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Konsultasi;
+use App\Models\Psikolog;
+use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -19,7 +22,12 @@ class AdminController extends Controller
     public function index()
     {
        $konsultasi_all = Konsultasi::all();
-        return view('dashboard_admin.dashboard',['konsultasi_all'=>$konsultasi_all]);
+
+       $total_user = User::all()->count();
+       $total_psikolog = Psikolog::all()->count();
+       $total_konsultasi = Konsultasi::all()->count();
+       $total_pemasukan = Transaksi::all()->sum('nominal');
+        return view('dashboard_admin.dashboard',['total_user'=>$total_user,'total_psikolog'=>$total_psikolog,'total_konsultasi'=>$total_konsultasi,'total_pemasukan'=>$total_pemasukan]);
     }
 
     /**

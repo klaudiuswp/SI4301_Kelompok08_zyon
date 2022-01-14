@@ -25,7 +25,6 @@ class KonsultasiController extends Controller
         //     $konsultasi_each['psikolog'] = Psikolog::where('id',$konsultasi_each['psikolog_id']);
         //     $konsultasi_each['user'] = User::where('id',$konsultasi_each['customer_id']);
         // }
-
         return view('dashboard_admin.konsultasi',['konsultasi'=>$konsultasi]);
     }
 
