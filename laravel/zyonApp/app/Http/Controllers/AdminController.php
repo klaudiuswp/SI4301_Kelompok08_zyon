@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Konsultasi;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -17,7 +18,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('dashboard_admin.dashboard');
+       $konsultasi_all = Konsultasi::all();
+        return view('dashboard_admin.dashboard',['konsultasi_all'=>$konsultasi_all]);
     }
 
     /**

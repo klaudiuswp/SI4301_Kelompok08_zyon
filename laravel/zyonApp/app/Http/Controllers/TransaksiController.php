@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Psikolog;
+use App\Models\Rekening;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,11 +17,9 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->hasRole('admin')){
-            return view('dashboard_admin.transaksi');
-        }if(Auth::user()->hasRole('user')){
-            return view('dashboard_user.event');
-        }
+        $transaksi = Transaksi::all();
+        $user_name = Auth::user()->name;
+        return view('dashboard_admin.transaksi',['transaksi'=>$transaksi,'nama'=>$user_name]);
     }
 
     /**
@@ -27,9 +27,12 @@ class TransaksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($date)
+    public function create(Request $request)
     {
-        return view('dashboard_user.bayar',$date);
+        // $id = $request->id;
+        // Psikolog::findorFail($id)
+        // $date = $request->date;
+        // return view('dashboard_user.bayar',['id'=>$id,'date'=>$date]);
     }
 
     /**

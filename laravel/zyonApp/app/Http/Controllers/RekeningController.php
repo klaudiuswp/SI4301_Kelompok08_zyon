@@ -24,7 +24,8 @@ class RekeningController extends Controller
      */
     public function create()
     {
-        //
+        $rekening = Rekening::all();
+        return view('dashboard_admin.metode-bayar',['rekenings'=>$rekening]);
     }
 
     /**
@@ -35,7 +36,15 @@ class RekeningController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'no_rek' => ['required', 'unique:rekenings', 'max:255'],
+            'nama' => ['required', 'max:255'],
+            'payment_method' => ['required', 'string'],
+        ]);
+        
+        Rekening::create($validated);
+
+        return redirect()->back()->with('success','pembayaran berhasil');
     }
 
     /**
@@ -55,9 +64,18 @@ class RekeningController extends Controller
      * @param  \App\Models\Rekening  $rekening
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rekening $rekening)
+    public function edit(Request $request)
     {
-        //
+        $rekening = Rekening::findorFail($request->no_rek);
+        $validated = $request->validate([
+            'no_rek' => ['string', 'max:255'],
+            'nama' => ['max:255'],
+            'payment_method' => ['string'],
+        ]);
+
+        $rekening->update($validated);
+
+        return redirect()->back()->with('success', 'User berhasil diubah.');
     }
 
     /**
@@ -78,8 +96,11 @@ class RekeningController extends Controller
      * @param  \App\Models\Rekening  $rekening
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rekening $rekening)
+    public function delete(Request $request)
     {
-        //
+        $rekening = Rekening::findorFail($request->no_rek);
+        $rekening->delete();
+
+        return redirect()->back()->with('success', 'User berhasil diubah.');
     }
 }

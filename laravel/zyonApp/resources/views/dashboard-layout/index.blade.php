@@ -12,14 +12,14 @@
     <title>Dashboard</title>
 
     <!-- Favicons -->
-    <link href="home_assets/img/favicon.png" rel="icon" />
-    <link href="home_assets/img/favicon.png" rel="apple-touch-icon" />
+    <link href="{{ url('home_assets/img/favicon.png') }}" rel="icon" />
+    <link href="{{ url('home_assets/img/favicon.png') }}" rel="apple-touch-icon" />
 
     <!-- Custom CSS -->
-    <link href="dashboard_assets/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="dashboard_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" />
+    <link href="{{ url('dashboard_assets/plugins/bower_components/chartist/dist/chartist.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url('dashboard_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css') }}" />
     <!-- Custom CSS -->
-    <link href="dashboard_assets/css/style.min.css" rel="stylesheet" />
+    <link href="{{ url('dashboard_assets/css/style.min.css') }}" rel="stylesheet" />
   </head>
 
   <body>
@@ -41,7 +41,7 @@
               
               <b class="logo-icon">
                 
-                <img src="dashboard_assets/img/Logo.png" alt="homepage" style="width: 200px" />
+                <img src="{{ url('dashboard_assets/img/Logo.png') }}" alt="homepage" style="width: 200px" />
               </b>
               
             </a>
@@ -90,8 +90,8 @@
                             @endif
 
                             @role('user')
-                            <x-jet-dropdown-link href="/event">
-                                {{ __('Event') }}
+                            <x-jet-dropdown-link href="/kegiatan">
+                                {{ __('Activity') }}
                             </x-jet-dropdown-link>
                             @endrole
 
@@ -144,8 +144,8 @@
                   <span class="hide-menu text-white">Konsultasi</span>
                 </a>
                 <ul class="dropdown-menu mx-5" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item-text text-white" href="/event" style="padding-left: 30px">Daftar Konsultasi</a></li>
-                  <li><a class="dropdown-item-text text-white" href="/psikolog" style="padding-left: 30px">Tambah Konsultasi</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/kegiatan-aktif" style="padding-left: 30px">Konsultasi</a></li>
+                  <li><a class="dropdown-item-text text-white" href="/pilih-psikolog" style="padding-left: 30px">Tambah Konsultasi</a></li>
                 </ul>
                 @endrole
 
@@ -163,7 +163,7 @@
 
               <li class="sidebar-item">
                 @role('user')
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" href="psikolog">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" href="/riwayat-transaksi">
                   <i class="fa fa-credit-card text-white" aria-hidden="true"></i>
                   <span class="hide-menu text-white">Transaksi</span>
                 </a>
@@ -177,15 +177,24 @@
                 @endrole
               </li>
 
+              @role('admin')
               <li class="sidebar-item">
-                @role('admin')
                 <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" href="/transaksi">
                   <i class="fa fa-credit-card text-white" aria-hidden="true"></i>
                   <span class="hide-menu text-white">Transaksi</span>
                 </a>
-                @endrole
                 
               </li>
+              @endrole
+
+              @role('admin')
+              <li class="sidebar-item">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" href="/metode-pembayaran">
+                  <i class="fa fa-credit-card text-white" aria-hidden="true"></i>
+                  <span class="hide-menu text-white">Metode Pembayaran</span>
+                </a>
+              </li>
+              @endrole
             </ul>
           </nav>
           
@@ -194,6 +203,7 @@
       </aside>
 
       <div class="page-wrapper">
+        <x-jet-validation-errors class="mb-3 rounded-3" />
 
         @yield('container')
 
@@ -204,21 +214,21 @@
     </div>
     <!-- End Wrapper -->
     <!-- All Jquery -->
-    <script src="dashboard_assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ url('dashboard_assets/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="dashboard_assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="dashboard_assets/js/app-style-switcher.js"></script>
-    <script src="dashboard_assets/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{ url('dashboard_assets/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('dashboard_assets/js/app-style-switcher.js') }}"></script>
+    <script src="{{ url('dashboard_assets/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
     <!--Wave Effects -->
-    <script src="dashboard_assets/js/waves.js"></script>
+    <script src="{{ url('dashboard_assets/js/waves.js') }}"></script>
     <!--Menu sidebar -->
-    <script src="dashboard_assets/js/sidebarmenu.js"></script>
+    <script src="{{ url('dashboard_assets/js/sidebarmenu.js') }}"></script>
     <!--Custom JavaScript -->
-    <script src="dashboard_assets/js/custom.js"></script>
+    <script src="{{ url('dashboard_assets/js/custom.js') }}"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="dashboard_assets/plugins/bower_components/chartist/dist/chartist.min.js"></script>
-    <script src="dashboard_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="dashboard_assets/js/pages/dashboards/dashboard1.js"></script>
+    <script src="{{ url('dashboard_assets/plugins/bower_components/chartist/dist/chartist.min.js') }}"></script>
+    <script src="{{ url('dashboard_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
+    <script src="{{ url('dashboard_assets/js/pages/dashboards/dashboard1.js') }}"></script>
   </body>
 </html>

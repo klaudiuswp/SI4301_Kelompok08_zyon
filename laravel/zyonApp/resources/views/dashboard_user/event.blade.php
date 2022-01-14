@@ -1,13 +1,16 @@
 @extends('dashboard-layout.index')
 
 @section('container')
-<br>
-<div class="container mt-2">
-    <h3><b>Event</b></h3>
-</div>
+<header class="d-flex py-3 bg-white shadow-sm border-top mb-4">
+    <div class="container">
+        <h2 class="h4 font-weight-bold px-4 pt-2">
+            <b>{{ $pos }}</b>
+        </h2>
+    </div>
+</header>
 <br>
 <div class="container">
-    <div class="row" style="background-color: rgb(255, 255, 255); border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+    <div class="row m-4" style="background-color: rgb(255, 255, 255); border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-15">
@@ -23,14 +26,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-    
-                                    <tr class="text-center" style="height: 60px;">
-                                        <td>1</td>
-                                        <td>Alpen Aene</td>
-                                        <td>12/12/2022</td>
-                                        <td>Menunggu Konfirmasi</td>
-                                        <td>Waiting</td>
-                                    </tr>
+
+                                @foreach ($konsultasi_all as $konsultasi)
+                                <tr class="text-center" style="height: 60px;">
+                                    <td>{{ $konsultasi->id }}</td>
+                                    <td></td>
+                                    <td>{{ $konsultasi->tanggal }}</td>
+                                    <td></td>
+                                    <td>{{ $konsultasi->status }}</td>
+                                </tr>
+                                @endforeach
+                                    
                             </tbody>
     
                         </table>
@@ -42,4 +48,5 @@
     </div>
 
 </div>
+<br>
 @endsection

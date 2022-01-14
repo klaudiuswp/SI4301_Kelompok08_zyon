@@ -3,10 +3,6 @@
 @section('container')
 
 <div class="container-fluid">
-  <form class="d-flex">
-    <input class="form-control me-2" type="text" placeholder="Search" />
-    <button class="btn btn-primary" type="button">Search</button>
-  </form>
   <br />
   <div class="row">
     <div class="col-md-12">
@@ -24,36 +20,19 @@
             </tr>
           </thead>
           <tbody>
+            @foreach ($transaksi as $transaksi_each)
             <tr>
-              <td>1</td>
-              <td>Jacob</td>
-              <td>Rp. 10000000</td>
-              <td>Lunas/tidak lunas</td>
+              <td>{{ $transaksi_each->id }}</td>
+              <td>{{ $nama }}</td>
+              <td>{{ $transaksi_each->nominal }}</td>
+              <td>{{ $transaksi_each->status }}</td>
               <td>
                 <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</div>
                 <div class="btn btn-danger">Delete</div>
               </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Rp. 10000000</td>
-              <td>Lunas/tidak lunas</td>
-              <td>
-                <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</div>
-                <div class="btn btn-danger">Delete</div>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Jacob</td>
-              <td>Rp. 10000000</td>
-              <td>Lunas/tidak lunas</td>
-              <td>
-                <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</div>
-                <div class="btn btn-danger">Delete</div>
-              </td>
-            </tr>
+            @endforeach
+            
           </tbody>
         </table>
         

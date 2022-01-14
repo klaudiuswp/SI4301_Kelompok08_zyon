@@ -55,16 +55,6 @@ class PsikologController extends Controller
         $foto = time().'_'.$request->nama.'.'.$request->foto_psikolog->extension();
 
         $validated['foto_psikolog'] = $request->file('foto_psikolog')->storeAs('foto-psikolog',$foto);
-        // Storage::disk('local')->put('example.txt', 'Contents');
-
-        // $request->foto_psikolog->move(public_path('foto_psikolog'), $foto);
-
-        // $psikolog = Psikolog::create([
-        //     'nama' => $request->nama,
-        //     'foto_psikolog' => $foto,
-        //     'fee' => $request->fee,
-        //     'deskripsi' => $request->deskripsi
-        // ]);
         
         Psikolog::create($validated);
 

@@ -9,13 +9,14 @@ class Transaksi extends Model
 {
     use HasFactory;
 
+    protected $table = 'transaksi';
+
     protected $fillable = [
-        'status','nominal','bukti_transaksi'
+        'konsultasi_id','customer_id','status','nominal','nama_rekening_asal','no_rekening_asal','no_rekening_tujuan','bukti_transaksi'
     ];
 
-    // $table->foreignId('konsultasi_id');
-    // $table->foreignId('customer_id');
-    // $table->string('status');
-    // $table->string('nominal');
-    // $table->string('bukti_transaksi');
+    public function konsultasi()
+    {
+        return $this->hasOne(Konsultasi::class);
+    }
 }

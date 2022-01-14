@@ -102,8 +102,8 @@
                             @endif
 
                             @role('user')
-                            <x-jet-dropdown-link href="/event">
-                                {{ __('Event') }}
+                            <x-jet-dropdown-link href="/kegiatan-aktif">
+                                {{ __('Activity') }}
                             </x-jet-dropdown-link>
                             @endrole
 

@@ -9,13 +9,19 @@ class Konsultasi extends Model
 {
     use HasFactory;
 
+    protected $table = 'konsultasi';
+
     protected $fillable = [
-        'tanggal','status'
+        'customer_id','psikolog_id','tanggal','status'
     ];
 
-    // $table->foreignId('customer_id');
-    // $table->foreignId('psikolog_id');
-    // $table->string('tanggal');
-    // $table->string('status');
-    // $table->timestamps();
+    public function transaksi()
+    {
+        return $this->hasOne(Transaksi::class, 'konsultasi_id', 'id');
+    }
+
+    public function psikolog()
+    {
+        return $this->belongsTo(Psikolog::class, 'id', 'psikolog_id');
+    }
 }

@@ -52,48 +52,11 @@
                 </div>
 
                 <div class="card-text box-btn-konsultasi">
-                    <a class="btn-fitur-konsultasi" data-bs-toggle="modal" data-bs-target="#pilih-biro">
+                    <a href="/pilih-psikolog" class="btn-fitur-konsultasi">
                         MULAI KONSULTASI
                     </a>
                 </div>
 
-            </div>
-        </div>
-
-
-        <!-- PILIH BIRO MODAL -->
-        <div class="modal content" id="pilih-biro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-
-                <div class="modal-content">
-                    <div class="modal-header p-5 pb-4 border-bottom-0">
-                        <h2 class="fw-bold mb-0">Pilih Biro</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body mb-0">
-                        <!-- Isi Biro -->
-                        <div class="accordion isi-biro">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            ULP Fakultas Psikologi UIN SGD Bandung
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        ULP Fakultas Psikologi adalah biro psikologi yang berbasis di UIN SGD Bandung.
-                                        <a href="https://api.whatsapp.com/send?phone=6282128863838&text=Saya%20tertarik%20melakukan%20konsultasi%20dengan%20ULP%20Fakultas%20Psikologi.">Lanjutkan</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
             </div>
         </div>
 

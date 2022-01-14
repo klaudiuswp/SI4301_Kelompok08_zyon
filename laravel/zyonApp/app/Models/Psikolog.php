@@ -15,4 +15,9 @@ class Psikolog extends Model
         'nama','foto_psikolog','fee','deskripsi'
     ];
 
+    public function konsultasi()
+    {
+        return $this->hasMany(Konsultasi::class);
+    }
+
 }
