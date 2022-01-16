@@ -2,12 +2,16 @@
 
 @section('container')
 
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Sukses!</strong> {{ session('success') }}
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
     <div class="container-fluid">
-        <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Search" />
-            <button class="btn btn-primary" type="button">Search</button>
-        </form>
-        <br />
         <div class="row">
             <div class="col-md-12">
                 <div class="white-box">

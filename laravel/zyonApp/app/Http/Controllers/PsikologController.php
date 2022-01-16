@@ -19,11 +19,11 @@ class PsikologController extends Controller
      */
     public function index()
     {
-        // $psikologs = Psikolog::all();
+        $psikologs = Psikolog::all();
         if (Auth::user()->hasRole('admin')){
-            return view('dashboard_admin.psikolog');
+            return view('dashboard_admin.psikolog',['psikologs'=>$psikologs]);
         }if(Auth::user()->hasRole('user')){
-            return view('dashboard_user.psikolog');
+            return view('dashboard_user.psikolog',['psikologs'=>$psikologs]);
         }
     }
 

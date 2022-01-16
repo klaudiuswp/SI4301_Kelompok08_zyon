@@ -2,6 +2,15 @@
 
 @section('container')
 
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Sukses!</strong> {{ session('success') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
 <header class="d-flex py-3 bg-white shadow-sm border-top mb-4">
   <div class="container">
       <h2 class="h4 font-weight-bold px-4 pt-2">

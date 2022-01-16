@@ -17,7 +17,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksi = Transaksi::all();
+        $transaksi = Transaksi::all(); 
         $user_name = Auth::user()->name;
         return view('dashboard_admin.transaksi',['transaksi'=>$transaksi,'nama'=>$user_name]);
     }
@@ -86,8 +86,11 @@ class TransaksiController extends Controller
      * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    public function delete(Request $request)
     {
-        //
+        $transaksi = Transaksi::findorFail($request->id_delete);
+        $transaksi->delete();
+
+        return redirect()->back()->with('success', 'User berhasil diubah.');
     }
 }

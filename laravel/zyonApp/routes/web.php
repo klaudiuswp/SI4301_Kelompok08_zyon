@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/konsultasi', [KonsultasiController::class,'index']);
         Route::post('/konsultasi/update', [KonsultasiController::class,'update'])->name('konsultasi-update');
         Route::get('/transaksi', [TransaksiController::class,'index']);
+        Route::post('/transaksi/delete', [TransaksiController::class,'delete'])->name('transaksi-delete');
     });
 
     Route::group(['middleware' => ['role:user']], function() {
